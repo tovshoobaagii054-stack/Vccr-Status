@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vccr Clean Stats Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00e1ff",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0a0a0a",
+                        "surface": "#111a1b",
+                        "surface-accent": "#1a2527",
+                        "win": "#00ffa3",
+                        "loss": "#ff4b4b",
+                        "elite": "#00e1ff",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .scanline {
+                width: 100%;
+                height: 100px;
+                z-index: 10;
+                background: linear-gradient(0deg, rgba(0, 225, 255, 0) 0%, rgba(0, 225, 255, 0.05) 50%, rgba(0, 225, 255, 0) 100%);
+                position: fixed;
+                top: -100px;
+                pointer-events: none;
+            }
+            .bento-card {
+                background: #111a1b;
+                border: 1px solid rgba(0, 225, 255, 0.08);
+            }
+            .stat-label {
+                @apply text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-1;
+            }
+        }
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-dark selection:bg-primary selection:text-background-dark flex flex-col items-center">
+<nav class="w-full sticky top-0 z-50 flex items-center bg-background-dark/80 backdrop-blur-md px-6 py-6 border-b border-primary/5 justify-between max-w-md mx-auto">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-1 rounded-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-sm size-8 border border-primary/20" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAV8gcMTID6diGz8mrrfjyv1Zeq3YNPDRdgeV9tjO-L8-AjlkBmsPuKqdcppddHiiXYyFANFcMsn4O0t2cPQqntzYfqbeB5UNxvKNsy0t0R1mWqsMxBk55N6p_0vL9EHGA4u5yPH8ebEsg9w3NHe0bLlyZvz8LI_3yKZCIUo6G1NVEA6Jkc0uqdQccx9gNztej_16dtfCnFIoVVvklpgqLFB_fTMdT6NQr227KOjzdNNMByRdKkcg8aZkWOaZXEeUL0FLeV4cku6QKR");'></div>
+</div>
+<div>
+<h2 class="text-white text-lg font-bold tracking-tighter uppercase italic leading-none">Vccr</h2>
+<span class="text-[8px] text-primary uppercase font-bold tracking-[0.2em] opacity-50">Stats</span>
+</div>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-surface border border-white/5 text-white/60">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+</nav>
+<main class="p-6 w-full max-w-md mx-auto space-y-4">
+<div class="bento-card p-8 rounded-3xl relative overflow-hidden flex flex-col items-center mb-2">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full -mr-16 -mt-16"></div>
+<div class="relative group cursor-pointer">
+<div class="size-28 rounded-3xl border-2 border-primary p-1 bg-background-dark shadow-[0_0_30px_rgba(0,225,255,0.15)] overflow-hidden">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-2xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6RBFXbBBkbZCDCqt2mGWWz7lI2FJYHn5wEgQnkFd5hG0t7ibyhO26b2C-k-C628nv7Tcu2Up-bvPyl04cgakptc_Mmxe7V1X3E-hlLvq4IthINem9n9Qek7La36v8szF4xd-DKViggryp2nrS9V0o9IVS710s0Uy78V-bl7OAJt9hPwNLzLeaHr74ubskoKDkplLOfQdn3RZNjo3irfgaWv5VgR1Z73v_CG2pYNPe2VuJ7ktrRMT8SvFTNd0w2RGSzReQfTPxlIci");'></div>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-background-dark size-8 rounded-full flex items-center justify-center shadow-lg border-2 border-background-dark">
+<span class="material-symbols-outlined text-sm font-bold">edit</span>
+</div>
+</div>
+<div class="mt-6 flex flex-col items-center gap-1">
+<div class="flex items-center gap-2 group cursor-pointer">
+<h1 class="text-2xl font-bold tracking-tight text-white italic">S1mple_Vccr</h1>
+<span class="material-symbols-outlined text-sm text-white/30 group-hover:text-primary transition-colors">edit</span>
+</div>
+</div>
+<div class="mt-6 bg-white/5 border border-white/10 rounded-xl px-6 py-2 flex flex-col items-center">
+<span class="text-[8px] font-black text-white/30 uppercase tracking-[0.2em] mb-0.5">Tiered Rank</span>
+<span class="text-lg font-black uppercase italic tracking-tighter text-white">Class Champion</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bento-card p-6 rounded-3xl flex flex-col items-start relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-win/5 blur-2xl rounded-full"></div>
+<p class="stat-label">Win Round</p>
+<div class="flex items-baseline gap-1">
+<p class="text-3xl font-black italic text-win">16,420</p>
+</div>
+</div>
+<div class="bento-card p-6 rounded-3xl flex flex-col items-start relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-loss/5 blur-2xl rounded-full"></div>
+<p class="stat-label">Lose Round</p>
+<div class="flex items-baseline gap-1">
+<p class="text-3xl font-black italic text-loss">11,204</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bento-card p-6 rounded-3xl flex justify-between items-center relative overflow-hidden group">
+<div class="absolute left-0 top-0 h-full w-1 bg-primary"></div>
+<div>
+<p class="stat-label">CCR Points</p>
+<p class="text-4xl font-black italic text-white leading-none">2,450</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-primary uppercase tracking-widest">Top 1%</p>
+<p class="text-[10px] font-medium text-white/30 uppercase mt-1">Regional</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bento-card p-6 rounded-3xl flex flex-col items-center text-center">
+<p class="stat-label">Total Matches</p>
+<p class="text-3xl font-black text-white italic">1,248</p>
+</div>
+<div class="bento-card p-6 rounded-3xl flex flex-col items-center text-center">
+<p class="stat-label">Winrate</p>
+<p class="text-3xl font-black text-primary italic">68.4<span class="text-lg opacity-60">%</span></p>
+</div>
+</div>
+</div>
+<div class="py-8 text-center space-y-2">
+<p class="text-[10px] font-bold text-white/20 uppercase tracking-[0.3em]">Last Sync: 2m ago</p>
+<div class="h-px w-10 bg-white/10 mx-auto"></div>
+</div>
+</main>
+<div class="scanline"></div>
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] z-0"></div>
+
+</body></html>
